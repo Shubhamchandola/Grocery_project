@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reliance Grocery</title>
+    <link href="assets/styles/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/styles/main.css" rel="stylesheet">
+</head>
+
+<body ng-app="groceryApp">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Reliance Grocery</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cart</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" ng-controller="ProductController">
+        <h2 class="mt-4">Our Products</h2>
+        <div class="row">
+            <div class="col-md-4" ng-repeat="product in products">
+                <div class="card">
+                    <img class="card-img-top" ng-src="{{product.image}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{product.name}}</h5>
+                        <p class="card-text">{{product.description}}</p>
+                        <button class="btn btn-primary" ng-click="addToCart(product)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app/app.js"></script>
+</body>
+
+</html>

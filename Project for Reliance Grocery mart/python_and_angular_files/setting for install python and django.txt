@@ -1,0 +1,8 @@
+Install Django: pip install Django
+
+Create a new Django project: django-admin startproject reliance_grocery
+
+Create a new Django app for products: python manage.py startapp products
+
+
+"User can add products in there store and make website more good by adding more products and doing some work with in it" !
